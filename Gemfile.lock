@@ -1,3 +1,11 @@
+PATH
+  remote: .
+  specs:
+    macos-tags (0.1.0)
+      CFPropertyList
+      ffi-xattr
+      rexml
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -6,8 +14,6 @@ GEM
     ffi-xattr (0.1.2)
       ffi
     minitest (5.14.4)
-    minitest-color (0.0.2)
-      minitest (~> 5)
     rake (13.0.3)
     rexml (3.2.5)
 
@@ -15,12 +21,9 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
-  CFPropertyList
-  ffi-xattr
+  macos-tags!
   minitest
-  minitest-color
   rake
-  rexml
 
 BUNDLED WITH
    2.2.17
