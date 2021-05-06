@@ -1,5 +1,6 @@
 require 'ffi-xattr'
 require 'cfpropertylist'
+require 'shellwords'
 
 module MacosTags
   XATTR_TAGS = "com.apple.metadata:_kMDItemUserTags"
