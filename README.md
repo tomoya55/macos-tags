@@ -32,18 +32,25 @@ require 'macos-tags'
 
 ```ruby
 MacosTags.all_tags
+=> [
+  #<struct MacosTags::Tag label="Urgent", color=#<MacosTags::Color @name="yellow" @value=5>>,
+]
 ```
 
 ### Find files by tag
 
 ```ruby
-MacosTags.find_files(tag: "Urgent")
+> MacosTags.find_files(tag: "Urgent")
+=> [
+  "files"...
+]
 ```
 
 ### Count files by tag
 
 ```ruby
-MacosTags.count(tag: "Urgent")
+> MacosTags.count(tag: "Urgent")
+=> 22
 ```
 
 ### List tags on the file
@@ -51,6 +58,11 @@ MacosTags.count(tag: "Urgent")
 
 ```ruby
 MacosTags.tags(file: "/Users/me/Documents/note.txt")
+=>
+[
+  #<struct MacosTags::Tag label="Urgent", color=#<MacosTags::Color @name="red" @value=6>>,
+  #<struct MacosTags::Tag label="Important", color=#<MacosTags::Color @name="yellow" @value=5>>
+]
 ```
 
 ## TODOs
