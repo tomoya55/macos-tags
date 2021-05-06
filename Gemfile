@@ -1,7 +1,10 @@
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in macos-tags.gemspec
 gemspec
 
-gem "rake", "~> 12.0"
-gem "rspec", "~> 3.0"
+gem "rake"
+gem "ffi-xattr"
+gem 'CFPropertyList'
+gem 'rexml'
+gem 'minitest'
+gem 'minitest-color'
