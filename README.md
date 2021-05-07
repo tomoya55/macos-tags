@@ -80,9 +80,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 1. Bump `MacosTags::VERSION` && `git commit -m "Bump version"`
 2. `git tag <new version>`
-3. `git push origin --tags`
-4. bundle exec rake build
-5. bundle exec rake release
+3. `git push origin --tags` && `git push origin main`
+4. `bundle exec rake build`
+5. `bundle exec rake release`
 
 ## Contributing
 
