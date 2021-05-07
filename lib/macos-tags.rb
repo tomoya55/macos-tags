@@ -120,7 +120,7 @@ module MacosTags
     end
 
     def tags
-      parse_raw_tags.value.map do |raw_tag|
+      (parse_raw_tags&.value || []).map do |raw_tag|
         label, color_val = raw_tag.value.split("\n")
         Tag.new(label: label, color: Color.new(color_val.to_i))
       end
@@ -129,7 +129,9 @@ module MacosTags
     private
 
     def parse_raw_tags
-      plist.load_binary_str(xattr[XATTR_TAGS])
+      if xattr[XATTR_TAGS]
+        plist.load_binary_str(xattr[XATTR_TAGS])
+      end
     end
   end
 end
