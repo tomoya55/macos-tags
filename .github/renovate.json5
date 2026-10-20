@@ -1,0 +1,23 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: ['config:recommended', 'group:recommended', ':semanticCommits'],
+  timezone: 'Asia/Tokyo',
+  schedule: ['before 8am on Saturday'],
+  prConcurrentLimit: 5,
+  platformAutomerge: true,
+  automergeStrategy: 'squash',
+  packageRules: [
+    {
+      description: 'Auto-merge non-major updates',
+      matchUpdateTypes: ['patch', 'minor', 'pin', 'pinDigest', 'digest'],
+      automerge: true,
+      groupName: 'non-major dependencies',
+    },
+    {
+      description: 'Major updates stay in their own PR for review',
+      matchUpdateTypes: ['major'],
+      automerge: false,
+      labels: ['dependencies', 'breaking'],
+    },
+  ],
+}
